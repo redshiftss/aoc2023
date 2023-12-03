@@ -1,7 +1,7 @@
 use std::fs;
 pub fn main() {
     let contents =
-        fs::read_to_string("./src/day1.txt").expect("Should have been able to read the file");
+        fs::read_to_string("./input/day1.txt").expect("Should have been able to read the file");
     part2(contents);
 }
 
@@ -21,7 +21,6 @@ fn part1(contents: String) {
         .collect();
     let mut res = 0;
     for item in filtered {
-        dbg!(item[0] * 10 + item[item.len() - 1]);
         res = res + (item[0] * 10 + item[item.len() - 1]);
     }
     dbg!(res);
@@ -35,7 +34,6 @@ fn part2(contents: String) {
         .replace("fiveight", "58")
         .replace("twone", "21")
         .replace("eightwo", "82")
-    
         .replace("one", "1")
         .replace("two", "2")
         .replace("three", "3")
